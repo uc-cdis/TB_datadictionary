@@ -1,0 +1,20 @@
+language: python
+python:
+- '2.7'
+before_script:
+- yes | python setup.py install
+- git clone https://github.com/uc-cdis/dictionaryutils; cd dictionaryutils
+script:
+- "./run_tests.sh"
+deploy:
+  provider: s3
+  access_key_id: AKIAZRNPHKJIEFDSQQN6
+  secret_access_key:
+    secure: SwSrPXT9S/VkmhsVZRcwjNKdajfkqTaTCuPTa9byyxDu36mE5Cgby4kM8AhHvhyLZsfMV05bnkez8PwDajZRQnZRQS3OI3jp7ILRUsEPAkBqG+c+Qw179waKvwoKIp7kNLwasMXWKloWvjjit5oEseZAKsvP2qxS+IrFMPTfPpW33WW2Z/CBPvS4Hs45INfkOlnzMmLoShTJwkcn2HYViwFEqJVZK/MvusduFhqRsF1/uTHObK7FbZLh3YYwiWRJM3OpCjuGmeorrarSDDoztNiBmau51hriBSke+ENQQARH61nB+N5Vj0dCpnXxSMIwj8aFPiKE43ne/jQ9+XKvk5cbSvMVNxA6fOSbxuPSUe1JbjY6F9rh0STd7OXG1BQLGH1onJTJrkF9BVX7Iaq5uiyO/puUiEN96LD/Rujz02bp3Bsm0hn+XSOKIC1GrmHcLqLj30aC/lP1BZPc/B9daAFRJh0D0VjlhYlC/5cFmE5Az5bdMUAS9HYnkn/42EAvZaWflOxo6nw0iARVUgeBUgt7vU1gPX7eHNz9YcWXFKg9tiq6utUKzmndYPQOniZijYhhwMKrcB6swgqMDNcnCB0+Z7WGV7YGXmfAqtS5jufQZDKbGN5U0I2iWsqNR9iyNVSfBOIs+cmctnYl2xcAVPEErPh8uL3yGUGBx6gynCo=
+  bucket: dictionary-artifacts
+  local-dir: artifacts
+  upload-dir: tb-datadictionary/$TRAVIS_BRANCH
+  skip_cleanup: true
+  on:
+    repo: uc-cdis/TB_datadictionary
+    all_branches: true
