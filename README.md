@@ -48,3 +48,4 @@ would look like, each node has a mock submission located in the `examples/valid/
 ## Contributing
 
 Read how to contribute [here](https://github.com/NCI-GDC/portal-ui/blob/develop/CONTRIBUTING.md).
+
