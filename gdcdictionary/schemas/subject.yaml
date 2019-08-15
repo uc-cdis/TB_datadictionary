@@ -112,6 +112,13 @@ properties:
       Location of experiment.
     type: string
     
+  hiv_status:
+    description: >
+      HIV Status
+    enum:
+      - positive
+      - negative    
+    
   primary_site:
     description: Primary site for the project.
     enum:
