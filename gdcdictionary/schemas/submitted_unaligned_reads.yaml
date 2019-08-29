@@ -122,6 +122,8 @@ properties:
     description: >
       Classification determined by spoligotype using the lorikeet spoligotype analysis software.
     type: array
+    items:
+      type: string
 
   read_groups:
     $ref: "_definitions.yaml#/to_one"
