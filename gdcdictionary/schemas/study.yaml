@@ -34,6 +34,7 @@ required:
   - type
   - study_description
   - projects
+  - study_objective
 
 uniqueKeys:
   - [ id ]
@@ -63,9 +64,10 @@ properties:
 
   study_objective:
     description: >
-      The general objective of the study. What the study hopes to discover or determine
-      through testing.
-    type: string
+      The general objective of the study.
+    enum:
+      - "TB"
+      - "Not Applicable"
 
   study_completeness:
     description: >
