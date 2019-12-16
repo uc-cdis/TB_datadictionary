@@ -42,7 +42,6 @@ required:
   - submitter_id
   - type
   - subjects
-  - data_format
 
 properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
