@@ -1,4 +1,4 @@
-name: Build TB dictionary
+name: Build TB Dictionary
 
 on: push
 
